@@ -1,0 +1,5 @@
+minimum-spin: '0.2'
+plugin-packages:
+    - ../../..
+plugins:
+    - spin_consd.stdworkflows
