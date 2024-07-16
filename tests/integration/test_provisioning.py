@@ -6,14 +6,18 @@
 
 """Module implementing the integration tests for spin_docs"""
 
+from os import getcwd
+
 import pytest
-from spin import backtick, cli
+from spin import backtick, cd, cli
 
 
 @pytest.fixture(autouse=True)
 def cfg():
     """Fixture creating the configuration tree"""
-    cli.load_config_tree(None)
+    cwd = getcwd()
+    cli.load_config_tree("tests/yamls/minimal.yaml")
+    cd(cwd)
 
 
 def execute_spin(tmpdir, what, cmd, path="tests/integration/yamls", props=""):
