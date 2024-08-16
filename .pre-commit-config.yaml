@@ -104,7 +104,6 @@ repos:
                 ]
             types: [file] # override `types: [python]`
             files: \.(pyi?|ue)$
-    # FIXME: pylint generates lots of issues that should get fixed prior proper releasing
     - repo: https://github.com/pycqa/pylint
       # Linting of Python 3 files
       rev: v3.0.4

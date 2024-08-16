@@ -28,9 +28,7 @@ version.txt
 .coverage
 .coverage.*
 **/coverage/
-nosetests.xml
 *coverage*.xml
-.noseids
 python-ut-coverage.xml
 python-it-coverage.xml
 **.jest-cache/
@@ -40,37 +38,14 @@ junit.xml
 cept_test_results.json
 pytest*.xml
 
-# Translations
-*.pot
-*.mo
-
-# Sphinx documentation
-doc/_build
-doc/_docindex
-doc/docportal.db
-doc/*/*/*/docset.info
-doc/*/*/doctrees/
-doc/*/*/html/
-doc/*/*/htmlhelp/
-doc/*/*/latex/
-doc/*/*/pickle/
-doc/*/*/.build
-.doctrees/
-doc/**/_js
+# Documentation
+docs/_build
+*schemaref.rst
 
 # IDE configuration
 .idea/
 .vscode/
 *.code-workspace
-
-# CDB Instances
-inst/
-sqlite/
-oracle/
-mssql*/
-instance/
-eggtest/
-pkgtest_instances/
 
 *.log
 
