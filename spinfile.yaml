@@ -1,0 +1,28 @@
+# The spinfile.yaml for spin_docs is required since building the documentation
+# requires a provisioned project.
+minimum-spin: '0.2'
+
+plugin-packages:
+    - spin_python
+    - spin_docs
+    - '../spin_consd'
+
+plugins:
+    - spin_docs.sphinx
+    - spin_consd.stdworkflows
+
+python:
+    version: '3.11.9'
+    requirements:
+        - sphinx-rtd-theme
+
+sphinx:
+    build_dir: _build
+
+build-rules:
+    task docs:
+        sources: docs/_schemaref.rst
+    docs/_schemaref.rst:
+        sources: [src/spin_consd]
+        spin:
+            - schemadoc docs -o docs/plugins/stdworkflows_schemaref.rst
