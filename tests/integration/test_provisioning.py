@@ -6,35 +6,28 @@
 
 """Module implementing the integration tests for spin_docs"""
 
-from os import getcwd
+import subprocess
 
 import pytest
-from spin import backtick, cd, cli
 
 
-@pytest.fixture(autouse=True)
-def cfg():
-    """Fixture creating the configuration tree"""
-    cwd = getcwd()
-    cli.load_config_tree("tests/yamls/minimal.yaml")
-    cd(cwd)
-
-
-def execute_spin(tmpdir, what, cmd, path="tests/integration/yamls", props=""):
-    """Helper to execute spin calls via spin."""
-    output = backtick(
-        f"spin -p spin.cache={tmpdir} {props} -C {path} --env {tmpdir} -f"
-        f" {what} --cleanup --provision {cmd}"
-    )
-    output = output.strip()
-    return output
+def execute_spin(yaml, env, path="tests/integration/yamls", cmd=""):
+    """Helper function to execute spin and return the output"""
+    return subprocess.check_output(
+        (
+            f"spin -p spin.cache={env} -C {path} --env {str(env)} -f {yaml}"
+            " --cleanup --provision " + cmd
+        ).split(" "),
+        encoding="utf-8",
+        stderr=subprocess.PIPE,
+    ).strip()
 
 
 @pytest.mark.integration()
-def test_stdworkflows_provision(tmpdir):
+def test_stdworkflows_provision(tmp_path):
     """Provision the stdworkflows plugin"""
     assert "all build tasks" in execute_spin(
-        tmpdir=tmpdir,
-        what="stdworkflows.yaml",
+        yaml="stdworkflows.yaml",
+        env=tmp_path,
         cmd="build --help",
     )
