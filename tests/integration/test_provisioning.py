@@ -15,7 +15,7 @@ def execute_spin(yaml, env, path="tests/integration/yamls", cmd=""):
     """Helper function to execute spin and return the output"""
     return subprocess.check_output(
         (
-            f"spin -p spin.cache={env} -C {path} --env {str(env)} -f {yaml}"
+            f"spin -p spin.data={env} -C {path} --env {str(env)} -f {yaml}"
             " --cleanup --provision " + cmd
         ).split(" "),
         encoding="utf-8",
