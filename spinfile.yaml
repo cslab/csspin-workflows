@@ -1,6 +1,5 @@
 # The spinfile.yaml for spin_docs is required since building the documentation
 # requires a provisioned project.
-minimum-spin: '0.2'
 
 plugin-packages:
     - spin_python
