@@ -29,7 +29,7 @@ must at least contain the following configuration.
 .. code-block:: yaml
     :caption: Minimal configuration of ``spinfile.yaml`` to setup ``spin_python.consd``
 
-    plugin-packages:
+    plugin_packages:
         - spin_consd
     plugins:
         - spin_consd.stdworkflows
@@ -50,7 +50,7 @@ In the following, this is demonstrated using the ``spin_python.pytest`` plugin.
 .. code-block:: yaml
     :caption: Example: Minimal configuration to run the "pytest"-task by using the "test" workflow
 
-    plugin-packages:
+    plugin_packages:
         - spin_consd
         - spin_python
     plugins:
@@ -75,7 +75,7 @@ task of ``spin_frontend.cypress`` as well as the "behave" task from
 .. code-block:: yaml
     :caption: Excerpt: ``spinfile.yaml`` configuration for running the preflight workflow
 
-    plugin-packages:
+    plugin_packages:
         - spin_ce
         - spin_consd
         - spin_frontend

@@ -17,7 +17,7 @@ within a project's ``spinfile.yaml``.
 .. code-block:: yaml
     :caption: Example: ``spinfile.yaml`` setup to enable the pytest and python plugins
 
-    plugin-packages:
+    plugin_packages:
         - spin_consd
     plugins:
         - spin_consd.stdworkflows
