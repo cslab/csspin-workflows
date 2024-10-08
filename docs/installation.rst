@@ -10,7 +10,7 @@ Installation and setup
 cs.spin must be installed beforehand, this can be done as documented at
 http://qs.pages.contact.de/spin/cs.spin/installation.html.
 
-For leveraging plugins from within the ``spin_consd`` plugin-package for
+For leveraging plugins from within the ``spin_conpod`` plugin-package for
 ``cs.spin``, the plugin-package must be added to the list of plugin-packages
 within a project's ``spinfile.yaml``.
 
@@ -18,9 +18,9 @@ within a project's ``spinfile.yaml``.
     :caption: Example: ``spinfile.yaml`` setup to enable the pytest and python plugins
 
     plugin_packages:
-        - spin_consd
+        - spin_conpod
     plugins:
-        - spin_consd.stdworkflows
+        - spin_conpod.stdworkflows
 
 After the setup is done, the plugin-package can be provisioned by executing the
 following command within the project's directory:

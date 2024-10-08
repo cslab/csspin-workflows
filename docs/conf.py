@@ -8,7 +8,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "spin_consd"
+project = "spin_conpod"
 copyright = "2024, CONTACT Software GmbH"  # pylint: disable=redefined-builtin
 author = "CONTACT Software GmbH"
 

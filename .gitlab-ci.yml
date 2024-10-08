@@ -6,7 +6,7 @@ include:
       file: ci/.gitlab-ci.yml
 
 # ------------------------------------------------------------------------------
-# FIXME: The following customizations must be removed as soon as spin_consd
+# FIXME: The following customizations must be removed as soon as spin_conpod
 #        provides a valid documentation
 .release_deps:
     needs:

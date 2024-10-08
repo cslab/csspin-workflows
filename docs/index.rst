@@ -3,19 +3,19 @@
    All rights reserved.
    https://www.contact-software.com/
 
-spin_consd documentation
-========================
+spin_conpod documentation
+=========================
 
-The ``spin_consd`` plugin-package for cs.spin serves to provide the necessary
+The ``spin_conpod`` plugin-package for cs.spin serves to provide the necessary
 plugins and tools to enhance the development at CONTACT Software. These include
 dev-goodies, workflows for the execution of multiple spin tasks in sequence and
 more.
 
-The sources can be found at https://code.contact.de/qs/spin/spin_consd, while
+The sources can be found at https://code.contact.de/qs/spin/spin_conpod, while
 the released versions are available at
-https://packages.contact.de/tools/misc/spin-consd.
+https://packages.contact.de/tools/misc/spin-conpod.
 
-``spin_consd`` requires at least Python 3.9.
+``spin_conpod`` requires at least Python 3.9.
 
 .. toctree::
    :maxdepth: 2
