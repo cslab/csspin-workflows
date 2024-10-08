@@ -5,7 +5,7 @@ requires = ["setuptools>=64", "setuptools_scm>=8"]
 [project]
 authors = [{name = "CONTACT Software GmbH"}]
 dependencies = []
-description = "spin_consd"
+description = "spin_conpod"
 dynamic = ["version", "readme"]
 license = {text = "Copyright (C) 2024 CONTACT Software GmbH"}
 maintainers = [
@@ -13,15 +13,15 @@ maintainers = [
   {name = "Benjamin Thomas Schwertfeger", email = "benjaminthomas.schwertfeger@contact-software.com"},
   {name = "Fabian Hafer", email = "fabian.hafer@contact-software.com"}
 ]
-name = "spin_consd"
+name = "spin_conpod"
 requires-python = ">=3.9"
 
 [project.urls]
-Issues = "https://code.contact.de/qs/spin/spin_consd/-/issues"
-Repository = "https://code.contact.de/qs/spin/spin_consd"
+Issues = "https://code.contact.de/qs/spin/spin_conpod/-/issues"
+Repository = "https://code.contact.de/qs/spin/spin_conpod"
 
 [tool.coverage.report]
-include = ["src/spin_consd/*"]
+include = ["src/spin_conpod/*"]
 precision = 2
 
 [tool.coverage.run]
@@ -139,7 +139,7 @@ markers = ["integration"]
 readme = {file = ["README.md"]}
 
 [tool.setuptools.package-data]
-spin_consd = ["*.yaml"]
+spin_conpod = ["*.yaml"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

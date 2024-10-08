@@ -3,16 +3,16 @@
    All rights reserved.
    https://www.contact-software.com/
 
-.. _spin_consd.stdworkflows:
+.. _spin_conpod.stdworkflows:
 
 =======================
-spin_consd.stdworkflows
+spin_conpod.stdworkflows
 =======================
 
-The ``spin_consd.stdworkflows`` plugin provides a way to run multiple spin tasks
+The ``spin_conpod.stdworkflows`` plugin provides a way to run multiple spin tasks
 in sequence with a single command using so-called "workflows".
 
-``spin_consd.stdworkflows`` ships the following workflows:
+``spin_conpod.stdworkflows`` ships the following workflows:
 
 * build (running tasks decorated by ``@task(when="build")```)
 * cept / acceptance (... by ``@task(when="cept")``)
@@ -20,19 +20,19 @@ in sequence with a single command using so-called "workflows".
 * preflight (... by ``@task(when="test")`` and ``@task(when="cept")``)
 * lint / check (... by ``@task(when="lint")``)
 
-How to setup the ``spin_consd.stdworkflows`` plugin?
+How to setup the ``spin_conpod.stdworkflows`` plugin?
 ####################################################
 
-For using the ``spin_consd.stdworkflows`` plugin, a project's ``spinfile.yaml``
+For using the ``spin_conpod.stdworkflows`` plugin, a project's ``spinfile.yaml``
 must at least contain the following configuration.
 
 .. code-block:: yaml
-    :caption: Minimal configuration of ``spinfile.yaml`` to setup ``spin_python.consd``
+    :caption: Minimal configuration of ``spinfile.yaml`` to setup ``spin_conpod.stdworkflows``
 
     plugin_packages:
-        - spin_consd
+        - spin_conpod
     plugins:
-        - spin_consd.stdworkflows
+        - spin_conpod.stdworkflows
 
 The provisioning of the required virtual environment can be done via the
 well-known ``spin provision``-command. For using the plugin it is recommended
@@ -51,10 +51,10 @@ In the following, this is demonstrated using the ``spin_python.pytest`` plugin.
     :caption: Example: Minimal configuration to run the "pytest"-task by using the "test" workflow
 
     plugin_packages:
-        - spin_consd
+        - spin_conpod
         - spin_python
     plugins:
-        - spin_consd.stdworkflows
+        - spin_conpod.stdworkflows
         - spin_python.pytest
     python:
         version: "3.11.9"
@@ -66,7 +66,7 @@ will automatically collect the "pytest" task and execute it.
 How to run all unit and acceptance tests of a CE-based project?
 ###############################################################
 
-The ``spin_consd.stdworkflows`` plugin provides a "preflight"-workflow, which
+The ``spin_conpod.stdworkflows`` plugin provides a "preflight"-workflow, which
 executes all spin tasks decorated by "test" and "cept". The task "pytest" of the
 ``spin_python.pytest`` plugin for example is decorated by "test". The "cypress"
 task of ``spin_frontend.cypress`` as well as the "behave" task from
@@ -77,11 +77,11 @@ task of ``spin_frontend.cypress`` as well as the "behave" task from
 
     plugin_packages:
         - spin_ce
-        - spin_consd
+        - spin_conpod
         - spin_frontend
         - spin_python
     plugins:
-        - spin_consd.stdworkflows
+        - spin_conpod.stdworkflows
         - spin_frontend.cypress
         - spin_python:
             - pytest
@@ -103,7 +103,7 @@ calling:
 
     spin preflight
 
-``spin_consd.stdworkflows`` schema reference
+``spin_conpod.stdworkflows`` schema reference
 ############################################
 
 .. include:: stdworkflows_schemaref.rst

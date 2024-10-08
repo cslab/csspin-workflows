@@ -4,11 +4,11 @@
 plugin_packages:
     - spin_python
     - spin_docs
-    - '../spin_consd'
+    - '../spin_conpod'
 
 plugins:
     - spin_docs.sphinx
-    - spin_consd.stdworkflows
+    - spin_conpod.stdworkflows
 
 python:
     version: '3.11.9'
@@ -18,10 +18,10 @@ python:
 sphinx:
     build_dir: _build
 
-build-rules:
+build_rules:
     task docs:
         sources: docs/_schemaref.rst
     docs/_schemaref.rst:
-        sources: [src/spin_consd]
+        sources: [src/spin_conpod]
         spin:
             - schemadoc docs -o docs/plugins/stdworkflows_schemaref.rst

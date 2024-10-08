@@ -8,16 +8,16 @@
 ``Collection of standard SD workflows``
 =======================================
 
-.. click:: spin_consd.stdworkflows:test
+.. click:: spin_conpod.stdworkflows:test
    :prog: spin [test|tests]
 
-.. click:: spin_consd.stdworkflows:cept
+.. click:: spin_conpod.stdworkflows:cept
    :prog: spin [cept|acceptance]
 
-.. click:: spin_consd.stdworkflows:preflight
+.. click:: spin_conpod.stdworkflows:preflight
    :prog: spin preflight
 
-.. click:: spin_consd.stdworkflows:build
+.. click:: spin_conpod.stdworkflows:build
    :prog: spin build
 """
 
