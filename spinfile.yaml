@@ -20,8 +20,8 @@ sphinx:
 
 build_rules:
     task docs:
-        sources: docs/_schemaref.rst
-    docs/_schemaref.rst:
+        sources: doc/_schemaref.rst
+    doc/_schemaref.rst:
         sources: [src/spin_conpod]
         spin:
-            - schemadoc docs -o docs/plugins/stdworkflows_schemaref.rst
+            - schemadoc doc --rst -o doc/plugins/stdworkflows_schemaref.rst
