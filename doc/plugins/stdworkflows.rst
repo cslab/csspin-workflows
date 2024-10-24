@@ -5,9 +5,9 @@
 
 .. _spin_conpod.stdworkflows:
 
-=======================
+========================
 spin_conpod.stdworkflows
-=======================
+========================
 
 The ``spin_conpod.stdworkflows`` plugin provides a way to run multiple spin tasks
 in sequence with a single command using so-called "workflows".
@@ -21,7 +21,7 @@ in sequence with a single command using so-called "workflows".
 * lint / check (... by ``@task(when="lint")``)
 
 How to setup the ``spin_conpod.stdworkflows`` plugin?
-####################################################
+#####################################################
 
 For using the ``spin_conpod.stdworkflows`` plugin, a project's ``spinfile.yaml``
 must at least contain the following configuration.

@@ -17,6 +17,9 @@
 .. click:: spin_conpod.stdworkflows:preflight
    :prog: spin preflight
 
+.. click:: spin_conpod.stdworkflows:lint
+   :prog: spin lint
+
 .. click:: spin_conpod.stdworkflows:build
    :prog: spin build
 """
@@ -28,10 +31,17 @@ from spin import invoke, option, task
 def test(
     instance: option("-i", "--instance"),  # noqa: F821
     coverage: option("-c", "--coverage", is_flag=True),  # noqa: F821
+    with_test_report: option("--with-test-report", is_flag=True),  # noqa: F821,F722
     args,
 ):
     """Run all tests defined in this project."""
-    invoke("test", instance=instance, coverage=coverage, args=args)
+    invoke(
+        "test",
+        instance=instance,
+        coverage=coverage,
+        with_test_report=with_test_report,
+        args=args,
+    )
 
 
 @task(aliases=["acceptance"])
@@ -39,10 +49,17 @@ def cept(
     cfg,  # pylint: disable=unused-argument
     instance: option("-i", "--instance"),  # noqa: F821
     coverage: option("-c", "--coverage", is_flag=True),  # noqa: F821
+    with_test_report: option("--with-test-report", is_flag=True),  # noqa: F821,F722
     args,  # pylint: disable=unused-argument
 ):
     """Run all acceptance tests defined in this project."""
-    invoke("cept", instance=instance, coverage=coverage, args=args)
+    invoke(
+        "cept",
+        instance=instance,
+        coverage=coverage,
+        with_test_report=with_test_report,
+        args=args,
+    )
 
 
 @task(aliases=["check"])
