@@ -15,9 +15,6 @@ python:
     requirements:
         - sphinx-rtd-theme
 
-sphinx:
-    build_dir: _build
-
 build_rules:
     task docs:
         sources: doc/_schemaref.rst

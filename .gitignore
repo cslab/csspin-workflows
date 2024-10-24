@@ -39,7 +39,7 @@ cept_test_results.json
 pytest*.xml
 
 # Documentation
-docs/_build
+doc/_build
 *schemaref.rst
 
 # IDE configuration

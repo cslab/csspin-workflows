@@ -104,6 +104,6 @@ calling:
     spin preflight
 
 ``spin_conpod.stdworkflows`` schema reference
-############################################
+#############################################
 
 .. include:: stdworkflows_schemaref.rst
