@@ -13,15 +13,15 @@ plugins provided by ``spin_condpod``.
 Developing workflows
 ====================
 
-The `spin_condpod.stdworkflows`_ plugin provides a way to run multiple spin
+The :ref:`spin_conpod.stdworkflows` plugin provides a way to run multiple spin
 tasks in sequence with a single command using so-called "workflows". Plugins
 that want to make use of pre-defined workflows can do so by decorating their
-tasks with the `@task(when="...")`_ decorator.
+tasks with the ``@task(when="...")`` decorator.
 
-It is required that a task that is decorated using `@task(when="...")` is
+It is required that a task that is decorated using ``@task(when="...")`` is
 implementing *all* of the parameters and their respective type annotations of
 the underlying workflow. Otherwise the execution of a workflow including this
 misconfigured task will fail.
 
-Please refer to the source code of the `spin_condpod.stdworkflows`_ plugin for
+Please refer to the source code of the :ref:`spin_conpod.stdworkflows` plugin for
 more information about the required parameters and their type annotations.
