@@ -29,9 +29,22 @@ from spin import invoke, option, task
 
 @task(aliases=["tests"])
 def test(
-    instance: option("-i", "--instance"),  # noqa: F821
-    coverage: option("-c", "--coverage", is_flag=True),  # noqa: F821
-    with_test_report: option("--with-test-report", is_flag=True),  # noqa: F821,F722
+    instance: option(
+        "-i",  # noqa: F821
+        "--instance",  # noqa: F821
+        help="Directory of the CONTACT Elements instance.",  # noqa: F722
+    ),
+    coverage: option(
+        "-c",  # noqa: F821
+        "--coverage",  # noqa: F821
+        is_flag=True,
+        help="Run the tests while collecting coverage.",  # noqa: F722
+    ),
+    with_test_report: option(
+        "--with-test-report",  # noqa: F722
+        is_flag=True,
+        help="Create a test execution report.",  # noqa: F722
+    ),
     args,
 ):
     """Run all tests defined in this project."""
@@ -47,9 +60,22 @@ def test(
 @task(aliases=["acceptance"])
 def cept(
     cfg,  # pylint: disable=unused-argument
-    instance: option("-i", "--instance"),  # noqa: F821
-    coverage: option("-c", "--coverage", is_flag=True),  # noqa: F821
-    with_test_report: option("--with-test-report", is_flag=True),  # noqa: F821,F722
+    instance: option(
+        "-i",  # noqa: F821
+        "--instance",  # noqa: F821
+        help="Directory of the CONTACT Elements instance.",  # noqa: F722
+    ),
+    coverage: option(
+        "-c",  # noqa: F821
+        "--coverage",  # noqa: F821
+        is_flag=True,
+        help="Run the tests while collecting coverage.",  # noqa: F722
+    ),
+    with_test_report: option(
+        "--with-test-report",  # noqa: F722
+        is_flag=True,
+        help="Create a test execution report.",  # noqa: F722
+    ),
     args,  # pylint: disable=unused-argument
 ):
     """Run all acceptance tests defined in this project."""
@@ -63,13 +89,28 @@ def cept(
 
 
 @task(aliases=["check"])
-def lint(allsource: option("--all", "allsource", is_flag=True), args):  # noqa: F821
+def lint(
+    allsource: option(
+        "--all",  # noqa: F821
+        "allsource",  # noqa: F821
+        is_flag=True,
+        help="Run for all src- and test-files.",  # noqa: F722
+    ),
+    args,
+):
     """Run all linters defined in this project."""
     invoke("lint", allsource=allsource, args=args)
 
 
 @task()
-def preflight(ctx, instance: option("-i", "--instance")):  # noqa: F821
+def preflight(
+    ctx,
+    instance: option(
+        "-i",  # noqa: F821
+        "--instance",  # noqa: F821
+        help="Directory of the CONTACT Elements instance.",  # noqa: F722
+    ),
+):
     """Pre-flight checks.
 
     Do this before committing else baby seals will die!
