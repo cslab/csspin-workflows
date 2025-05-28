@@ -24,7 +24,10 @@
    :prog: spin build
 """
 
-from spin import invoke, option, task
+try:
+    from csspin import invoke, option, task
+except ImportError:
+    from spin import invoke, option, task
 
 
 @task(aliases=["tests"])
