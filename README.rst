@@ -1,0 +1,61 @@
+|Latest Version| |Python| |License|
+
+`csspin-workflows` is maintained and published by `CONTACT Software GmbH`_ and
+serves workflows for the `csspin`_ task runner.
+
+The following plugins are available:
+
+- `csspin_workflows.stdworkflows`: Provides workflows for the `csspin`_ task
+  runner.
+
+Prerequisites
+-------------
+
+`csspin` is available on PyPI and can be installed using pip, pipx or any other
+Python package manager, e.g.:
+
+.. code-block:: console
+
+   python -m pip install csspin
+
+Using csspin-python
+-------------------
+
+The `csspin-python` package and its plugins can be installed by defining those
+within the `spinfile.yaml` configuration file of your project.
+
+.. code-block:: yaml
+
+    spin:
+      project_name: my_project
+
+    # To develop plugins comfortably, install the packages editable as
+    # follows and add the relevant plugins to the list 'plugins' below
+    plugin_packages:
+      - csspin-python
+      - csspin-workflows
+
+    # The list of plugins to be used for this project.
+    plugins:
+      - csspin_workflows.stdworkflows
+
+    python:
+      version: '3.11.10'
+
+If the ``spinfile.yaml`` is configured correctly, you can provision the project
+using ``spin provision``, that will automatically create a Python virtual
+environment and install the required dependencies. After that, you can run
+the "test" workflow using ``spin test`` in order to run all tasks annotated with
+``@task(when=["test"])```.
+
+.. _`CONTACT Software GmbH`: https://contact-software.com
+.. |Python| image:: https://img.shields.io/pypi/pyversions/csspin-workflows.svg?style=flat
+    :target: https://pypi.python.org/pypi/csspin-workflows/
+    :alt: Supported Python Versions
+.. |Latest Version| image:: http://img.shields.io/pypi/v/csspin-workflows.svg?style=flat
+    :target: https://pypi.python.org/pypi/csspin/
+    :alt: Latest Package Version
+.. |License| image:: http://img.shields.io/pypi/l/csspin-workflows.svg?style=flat
+    :target: https://www.apache.org/licenses/LICENSE-2.0.txt
+    :alt: License
+.. _`csspin`: https://pypi.org/project/csspin

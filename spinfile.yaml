@@ -1,16 +1,16 @@
-# The spinfile.yaml for spin_docs is required since building the documentation
+# The spinfile.yaml for csspin-docs is required since building the documentation
 # requires a provisioned project.
 spin:
-    index_url: https://packages.contact.de/tools/stable
+    project_name: csspin-workflows
 
 plugin_packages:
-    - spin_python
-    - spin_docs
+    - csspin-python
+    - csspin-docs
     - .
 
 plugins:
-    - spin_docs.sphinx
-    - spin_conpod.stdworkflows
+    - csspin_docs.sphinx
+    - csspin_workflows.stdworkflows
 
 python:
     version: '3.11.9'
@@ -21,6 +21,6 @@ build_rules:
     task docs:
         sources: doc/_schemaref.rst
     doc/_schemaref.rst:
-        sources: [src/spin_conpod]
+        sources: [src/csspin_workflows]
         spin:
             - schemadoc doc --rst -o doc/plugins/stdworkflows_schemaref.rst

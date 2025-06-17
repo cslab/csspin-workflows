@@ -4,7 +4,7 @@
 # All rights reserved.
 # https://www.contact-software.com/
 
-"""Module implementing the integration tests for spin_conpod"""
+"""Module implementing the integration tests for csspin_workflows"""
 
 import subprocess
 

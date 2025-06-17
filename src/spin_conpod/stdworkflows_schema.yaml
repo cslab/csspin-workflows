@@ -1,7 +1,0 @@
-# -*- mode: yaml; coding: utf-8 -*-
-#
-# Schema of the stdworkflows plugin for cs.spin
-
-stdworkflows:
-    type: object
-    help: Configuration of the stdworkflows plugin for cs.spin
