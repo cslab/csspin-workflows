@@ -1,4 +1,4 @@
 plugin_packages:
     - ../../..
 plugins:
-    - spin_conpod.stdworkflows
+    - csspin_workflows.stdworkflows

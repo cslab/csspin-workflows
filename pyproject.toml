@@ -1,27 +1,42 @@
 [build-system]
 build-backend = "setuptools.build_meta"
-requires = ["setuptools>=64", "setuptools_scm>=8"]
+requires = ["setuptools>=77", "setuptools_scm>=8"]
 
 [project]
-authors = [{name = "CONTACT Software GmbH"}]
+authors = [
+  {name = "CONTACT Software GmbH", email = "info@contact-software.com"}
+]
+classifiers = [
+  "Environment :: Console",
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development"
+]
 dependencies = []
-description = "spin_conpod"
+description = "Plugin-package for csspin providing workflows related plugins"
 dynamic = ["version", "readme"]
-license = {text = "Copyright (C) 2024 CONTACT Software GmbH"}
+license = "Apache-2.0"
+license-files = ["LICENSE"]
 maintainers = [
   {name = "Waleri Enns", email = "waleri.enns@contact-software.com"},
   {name = "Benjamin Thomas Schwertfeger", email = "benjaminthomas.schwertfeger@contact-software.com"},
   {name = "Fabian Hafer", email = "fabian.hafer@contact-software.com"}
 ]
-name = "spin_conpod"
+name = "csspin_workflows"
 requires-python = ">=3.9"
 
 [project.urls]
-Issues = "https://code.contact.de/qs/spin/spin_conpod/-/issues"
-Repository = "https://code.contact.de/qs/spin/spin_conpod"
+Homepage = "https://contact-software.com"
 
 [tool.coverage.report]
-include = ["src/spin_conpod/*"]
+include = ["src/csspin_workflows/*"]
 precision = 2
 
 [tool.coverage.run]
@@ -60,7 +75,7 @@ jobs = 0
 # CON: excluding INFERENCE_FAILURE to decrease the number of false positives
 confidence = ["HIGH", "CONTROL_FLOW", "INFERENCE", "UNDEFINED"]
 # CON: We disable lots of rules to make Pylint less verbose and
-# actually usable. We do it for different reasons. First, we dont
+# actually usable. We do it for different reasons. First, we don't
 # check code formatting: nowadays, this is the job of
 # auto-formatters (black in this case). Second, there are some
 # informational rules which can be useful for setup debugging but
@@ -136,10 +151,10 @@ score = "no"
 markers = ["integration"]
 
 [tool.setuptools.dynamic]
-readme = {file = ["README.md"]}
+readme = {file = "README.rst", content-type = "text/x-rst"}
 
 [tool.setuptools.package-data]
-spin_conpod = ["*.yaml"]
+csspin_workflows = ["*_schema.yaml"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

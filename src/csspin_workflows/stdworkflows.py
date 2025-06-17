@@ -1,33 +1,41 @@
 # -*- mode: python; coding: utf-8 -*-
 #
 # Copyright (C) 2024 CONTACT Software GmbH
-# All rights reserved.
 # https://www.contact-software.com/
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
 """
 ``Collection of standard SD workflows``
 =======================================
 
-.. click:: spin_conpod.stdworkflows:test
+.. click:: csspin_workflows.stdworkflows:test
    :prog: spin [test|tests]
 
-.. click:: spin_conpod.stdworkflows:cept
+.. click:: csspin_workflows.stdworkflows:cept
    :prog: spin [cept|acceptance]
 
-.. click:: spin_conpod.stdworkflows:preflight
+.. click:: csspin_workflows.stdworkflows:preflight
    :prog: spin preflight
 
-.. click:: spin_conpod.stdworkflows:lint
+.. click:: csspin_workflows.stdworkflows:lint
    :prog: spin lint
 
-.. click:: spin_conpod.stdworkflows:build
+.. click:: csspin_workflows.stdworkflows:build
    :prog: spin build
 """
 
-try:
-    from csspin import invoke, option, task
-except ImportError:
-    from spin import invoke, option, task
+from csspin import invoke, option, task
 
 
 @task(aliases=["tests"])
