@@ -40,3 +40,9 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "plugins/*_schemaref.rst
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = "sphinx_rtd_theme"
+html_context = {
+    "display_github": True,
+    "github_user": "cslab",
+    "github_repo": "csspin-workflows",
+    "github_version": "master/doc/",
+}
