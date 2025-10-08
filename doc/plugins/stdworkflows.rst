@@ -31,6 +31,7 @@ tasks in sequence with a single command using so-called "workflows".
 * test / tests (... by ``@task(when="test")``)
 * preflight (... by ``@task(when="test")`` and ``@task(when="cept")``)
 * lint / check (... by ``@task(when="lint")``)
+* localize (... by ``@task(when="localize")``)
 
 How to setup the ``csspin_workflows.stdworkflows`` plugin?
 #####################################################

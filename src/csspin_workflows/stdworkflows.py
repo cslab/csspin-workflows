@@ -131,6 +131,20 @@ def preflight(
 
 
 @task()
+def localize(
+    instance: option(
+        "-i",  # noqa: F821
+        "--instance",  # noqa: F821
+        help="Directory of the CONTACT Elements instance.",  # noqa: F722
+    ),
+):
+    """
+    Run automatic localization tasks.
+    """
+    invoke("localize", instance=instance)
+
+
+@task()
 def build(cfg):  # pylint: disable=unused-argument
     """Workflow which triggers all build tasks."""
     invoke("build")
