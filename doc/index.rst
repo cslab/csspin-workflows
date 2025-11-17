@@ -35,3 +35,4 @@ sequence and more.
    installation.rst
    development.rst
    plugins/stdworkflows.rst
+   relnotes.rst
