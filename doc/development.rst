@@ -24,7 +24,7 @@ plugins provided by ``csspin-workflows``.
 Developing workflows
 ====================
 
-The :ref:`csspin-workflows.stdworkflows` plugin provides a way to run multiple spin
+The :ref:`csspin_workflows.stdworkflows` plugin provides a way to run multiple spin
 tasks in sequence with a single command using so-called "workflows". Plugins
 that want to make use of pre-defined workflows can do so by decorating their
 tasks with the ``@task(when="...")`` decorator.

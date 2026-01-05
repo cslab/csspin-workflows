@@ -17,9 +17,9 @@
 
 .. _csspin_workflows.stdworkflows:
 
-========================
+=============================
 csspin_workflows.stdworkflows
-========================
+=============================
 
 The ``csspin_workflows.stdworkflows`` plugin provides a way to run multiple spin
 tasks in sequence with a single command using so-called "workflows".
@@ -34,7 +34,7 @@ tasks in sequence with a single command using so-called "workflows".
 * localize (... by ``@task(when="localize")``)
 
 How to setup the ``csspin_workflows.stdworkflows`` plugin?
-#####################################################
+##########################################################
 
 For using the ``csspin_workflows.stdworkflows`` plugin, a project's ``spinfile.yaml``
 must at least contain the following configuration.
