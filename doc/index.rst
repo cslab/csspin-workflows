@@ -22,11 +22,10 @@ necessary plugins and tools to enhance the development at CONTACT Software.
 These include dev-goodies, workflows for the execution of multiple spin tasks in
 sequence and more.
 
-.. The sources can be found at https://code.contact.de/qs/spin/csspin_workflows, while
-.. the released versions are available at
-.. https://packages.contact.de/tools/misc/spin-conpod.
+The sources can be found at https://github.com/cslab/csspin-workflows, while the
+released versions are available at https://pypi.org/project/csspin-workflows/.
 
-``csspin-workflows`` requires at least Python 3.9.
+``csspin-workflows`` requires at least Python 3.10.
 
 .. toctree::
    :maxdepth: 2
