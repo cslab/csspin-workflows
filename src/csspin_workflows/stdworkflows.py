@@ -137,11 +137,16 @@ def localize(
         "--instance",  # noqa: F821
         help="Directory of the CONTACT Elements instance.",  # noqa: F722
     ),
+    check_only: option(
+        "--check-only",  # noqa: F821
+        is_flag=True,
+        help="Check if the project is fully localized.",  # noqa: F722
+    ),
 ):
     """
     Run automatic localization tasks.
     """
-    invoke("localize", instance=instance)
+    invoke("localize", instance=instance, check_only=check_only)
 
 
 @task()
