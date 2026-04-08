@@ -59,12 +59,23 @@
 Release Notes
 =============
 
-Upcoming Release
-================
+v3.0.0
+======
 
-.. Month Day, Year
+April 8, 2026
+
+Breaking Changes
+----------------
+
+- Drop Python 3.9 support (`#23 <https://code.contact.de/qs/spin/csspin-workflows/-/work_items/23>`_)
+
+Enhancements
+------------
+
+- Add ``--check-only`` option to localize workflow (`!32 <https://code.contact.de/qs/spin/csspin-workflows/-/merge_requests/32>`_)
 
 Chores
 ------
 
-- Add release notes to the documentation structure (`#20 <https://code.contact.de/qs/spin/csspin-workflows/-/issues/20>`_)
+- Add release notes to the documentation structure (`#20 <https://code.contact.de/qs/spin/csspin-workflows/-/work_items/20>`_)
+- Add repository URL information to Wheel metadata (`#21 <https://code.contact.de/qs/spin/csspin-workflows/-/work_items/21>`_)
