@@ -59,6 +59,17 @@
 Release Notes
 =============
 
+v3.1.0
+======
+
+May 13, 2026
+
+Enhancements
+------------
+
+- Add sbom workflow for managing SBOMs (`!34
+  <https://code.contact.de/qs/spin/csspin-workflows/-/merge_requests/34>`_)
+
 v3.0.0
 ======
 
