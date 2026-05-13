@@ -15,6 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# FIXME: The following documentation should be part of the documentation!
 """
 ``Collection of standard SD workflows``
 =======================================
@@ -33,9 +34,13 @@
 
 .. click:: csspin_workflows.stdworkflows:build
    :prog: spin build
+
+.. click:: csspin_workflows.stdworkflows:sbom
+   :prog: spin sbom
 """
 
 from csspin import invoke, option, task
+from csspin.tree import ConfigTree
 
 
 @task(aliases=["tests"])
@@ -57,7 +62,7 @@ def test(
         help="Create a test execution report.",  # noqa: F722
     ),
     args,
-):
+) -> None:
     """Run all tests defined in this project."""
     invoke(
         "test",
@@ -70,7 +75,7 @@ def test(
 
 @task(aliases=["acceptance"])
 def cept(
-    cfg,  # pylint: disable=unused-argument
+    cfg: ConfigTree,  # pylint: disable=unused-argument
     instance: option(
         "-i",  # noqa: F821
         "--instance",  # noqa: F821
@@ -88,7 +93,7 @@ def cept(
         help="Create a test execution report.",  # noqa: F722
     ),
     args,  # pylint: disable=unused-argument
-):
+) -> None:
     """Run all acceptance tests defined in this project."""
     invoke(
         "cept",
@@ -108,7 +113,7 @@ def lint(
         help="Run for all src- and test-files.",  # noqa: F722
     ),
     args,
-):
+) -> None:
     """Run all linters defined in this project."""
     invoke("lint", allsource=allsource, args=args)
 
@@ -121,7 +126,7 @@ def preflight(
         "--instance",  # noqa: F821
         help="Directory of the CONTACT Elements instance.",  # noqa: F722
     ),
-):
+) -> None:
     """Pre-flight checks.
 
     Do this before committing else baby seals will die!
@@ -142,7 +147,7 @@ def localize(
         is_flag=True,
         help="Check if the project is fully localized.",  # noqa: F722
     ),
-):
+) -> None:
     """
     Run automatic localization tasks.
     """
@@ -150,6 +155,14 @@ def localize(
 
 
 @task()
-def build(cfg):  # pylint: disable=unused-argument
+def build(cfg: ConfigTree) -> None:  # pylint: disable=unused-argument
     """Workflow which triggers all build tasks."""
     invoke("build")
+
+
+@task()
+def sbom() -> None:
+    """Workflow triggering SBOM generation, merging, and enrichment."""
+    invoke("sbom:build")
+    invoke("sbom:assemble")
+    invoke("sbom:enrich")
