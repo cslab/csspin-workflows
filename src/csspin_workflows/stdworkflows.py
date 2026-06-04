@@ -39,7 +39,7 @@
    :prog: spin sbom
 """
 
-from csspin import invoke, option, task
+from csspin import group, invoke, option, task
 from csspin.tree import ConfigTree
 
 
@@ -160,9 +160,33 @@ def build(cfg: ConfigTree) -> None:  # pylint: disable=unused-argument
     invoke("build")
 
 
-@task()
-def sbom() -> None:
-    """Workflow triggering SBOM generation, merging, and enrichment."""
+@group(invoke_without_command=True)
+def sbom(ctx) -> None:
+    """
+    Workflow triggering SBOM generation, merging, and enrichment.
+
+    Also providing the individual subcommands for each step, which can be used
+    separately if needed.
+    """
+    if ctx.invoked_subcommand is None:
+        invoke("sbom:build")
+        invoke("sbom:assemble")
+        invoke("sbom:enrich")
+
+
+@sbom.task("build")
+def sbom_build() -> None:
+    """Workflow for building SBOMs."""
     invoke("sbom:build")
+
+
+@sbom.task("assemble")
+def sbom_assemble() -> None:
+    """Workflow for assembling multiple SBOMs into a single one."""
     invoke("sbom:assemble")
+
+
+@sbom.task("enrich")
+def sbom_enrich() -> None:
+    """Workflow for enriching an SBOM."""
     invoke("sbom:enrich")
