@@ -172,6 +172,7 @@ def sbom(ctx) -> None:
         invoke("sbom:build")
         invoke("sbom:assemble")
         invoke("sbom:enrich")
+        invoke("sbom:quality")
 
 
 @sbom.task("build")
@@ -190,3 +191,9 @@ def sbom_assemble() -> None:
 def sbom_enrich() -> None:
     """Workflow for enriching an SBOM."""
     invoke("sbom:enrich")
+
+
+@sbom.task("quality")
+def sbom_quality() -> None:
+    """Workflow for gating SBOM quality."""
+    invoke("sbom:quality")
