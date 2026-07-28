@@ -32,8 +32,8 @@ tasks in sequence with a single command using so-called "workflows".
 * preflight (... by ``@task(when="test")`` and ``@task(when="cept")``)
 * lint / check (... by ``@task(when="lint")``)
 * localize (... by ``@task(when="localize")``)
-* sbom (invoking ``sbom:build``, ``sbom:assemble``, and ``sbom:enrich`` in
-  sequence, with optional subcommands for individual steps)
+* sbom (invoking ``sbom:build``, ``sbom:assemble``, ``sbom:enrich``, and
+  ``sbom:quality`` in sequence, with optional subcommands for individual steps)
 
 How to setup the ``csspin_workflows.stdworkflows`` plugin?
 ##########################################################
@@ -121,12 +121,13 @@ calling:
 How to run the SBOM workflow?
 #############################
 
-The ``sbom`` workflow triggers SBOM generation, merging, and enrichment by
-invoking the ``sbom:build``, ``sbom:assemble``, and ``sbom:enrich`` spin tasks
-in sequence. Unlike the other workflows, it does not collect tasks via the
-``@task(when=)`` decorator but calls named tasks directly.
+The ``sbom`` workflow triggers SBOM generation, merging, enrichment, and
+quality gating by invoking the ``sbom:build``, ``sbom:assemble``,
+``sbom:enrich``, and ``sbom:quality`` spin tasks in sequence. Unlike the other
+workflows, it does not collect tasks via the ``@task(when=)`` decorator but
+calls named tasks directly.
 
-Run all three steps with a single command:
+Run all four steps with a single command:
 
 .. code-block:: console
 
@@ -140,6 +141,7 @@ to run:
     spin sbom build
     spin sbom assemble
     spin sbom enrich
+    spin sbom quality
 
 ``csspin_workflows.stdworkflows`` schema reference
 ##################################################
