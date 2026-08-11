@@ -23,7 +23,7 @@ repos:
     # ------------------Format Hooks--------------- #
     - repo: https://github.com/ambv/black
       # Black is a PEP 8 compliant opinionated code formatter.
-      rev: 25.12.0
+      rev: 26.5.1
       hooks:
           - id: black
             types: [file] # override `types: [python]`
@@ -43,11 +43,11 @@ repos:
             files: \.(pyi?|ue)$
     - repo: https://github.com/rbubley/mirrors-prettier
       # Prettier is an opinionated code formatter for JS, TS, json etc.
-      rev: v3.7.4
+      rev: v3.9.6
       hooks:
           - id: prettier
     - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
-      rev: v2.15.0
+      rev: v2.16.0
       hooks:
           - id: pretty-format-toml
             args: [--autofix]
@@ -82,7 +82,7 @@ repos:
           # Trims trailing whitespace.
           - id: trailing-whitespace
     - repo: https://github.com/homebysix/pre-commit-macadmin
-      rev: v1.22.0
+      rev: v1.25.1
       hooks:
           # Checks, whether a correct identity is used to commit/ push
           - id: check-git-config-email
@@ -106,7 +106,7 @@ repos:
             files: \.(pyi?|ue)$
     - repo: https://github.com/pycqa/pylint
       # Linting of Python 3 files
-      rev: v4.0.4
+      rev: v4.0.7
       hooks:
           - id: pylint
             args:
@@ -116,7 +116,7 @@ repos:
                 - '-j=4'
     - repo: https://github.com/PyCQA/bandit
       # Bandit is a tool designed to find common security issues in Python code.
-      rev: 1.9.2
+      rev: 1.9.4
       hooks:
           - id: bandit
             args: [-x=tests] # exclude tests from run

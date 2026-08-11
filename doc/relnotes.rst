@@ -59,6 +59,29 @@
 Release Notes
 =============
 
+v3.2.0
+======
+
+August 11, 2026
+
+Enhancements
+------------
+
+- Provide sub workflows as tasks below the sbom subcommand (`!36
+  <https://code.contact.de/pod/components/csspin-workflows/-/merge_requests/36>`_)
+- Add sbom:quality workflow to the sbom group (`!37
+  <https://code.contact.de/pod/components/csspin-workflows/-/merge_requests/37>`_)
+
+Chores
+------
+
+- Add SonarQube analysis (`!38
+  <https://code.contact.de/pod/components/csspin-workflows/-/merge_requests/38>`_)
+- Add AGENTS.md and document sbom:quality workflow (`!39
+  <https://code.contact.de/pod/components/csspin-workflows/-/merge_requests/39>`_)
+- Update CI includes and stale references after move to pod/components (`!40
+  <https://code.contact.de/pod/components/csspin-workflows/-/merge_requests/40>`_)
+
 v3.1.0
 ======
 
